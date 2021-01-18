@@ -1,12 +1,27 @@
 <?php
-// タスクの一覧表示機能
-// ファイルの読み込み
+// DBに接続
 require_once('Models/Task.php');
+// class Taskが使えるようになった
 require_once('function.php');
 
+// SQL文のselect文を用意・実行
+// → getAll()というメソッドをindex.phpで実行したい
+// → class Modelを読み込めばよい → class Taskを読み込めばよい	-
+
+// $taskはインスタンス
 $task = new Task();
 $tasks = $task->getAll();
+// getAll()の中にSQL文のselect文が書いてあるから
+
+// デバック作業
 // var_dump($tasks);
+// die;
+
+
+// タスクの一覧表示機能
+// ファイルの読み込み
+
+
 
 // データの取得
 
@@ -63,9 +78,9 @@ $tasks = $task->getAll();
                 <div class="card">
                     <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title"><?= h($task["title"]); ?></h5>
+                        <h5 class="card-title"><?php echo $task["title"]; ?></h5>
                         <p class="card-text">
-                            <? h($task["contents"]); ?>
+                            <?php echo $task["contents"]; ?>
                         </p>
                         <div class="text-right d-flex justify-content-end">
                             <!-- * href内を変更する -->
