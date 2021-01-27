@@ -7,7 +7,7 @@ require_once('Models/Task.php');
 // 何を受け取る？
 // タイトルとコンテンツを受け取る必要がある
   //ユーザーがformでデータ送信した値
-$title = $_POST['title'];　// inputタグのname属性
+$title = $_POST['title'];// inputタグのname属性
 $contents = $_POST['contents']; // textareaタグのname属性
 
   // データが作られた時間
